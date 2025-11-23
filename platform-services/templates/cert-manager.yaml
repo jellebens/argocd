@@ -6,7 +6,7 @@ metadata:
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
-  project: platform-services
+  project: cluster-bootstrap
   source:
     repoURL: https://charts.jetstack.io
     targetRevision: v1.19.1

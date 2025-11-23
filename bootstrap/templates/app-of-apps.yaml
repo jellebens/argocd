@@ -1,0 +1,51 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  creationTimestamp: "2025-11-23T01:44:50Z"
+  generation: 2
+  name: platform-services
+  namespace: argocd
+spec:
+  destination:
+    namespace: amarok-system
+    server: https://kubernetes.default.svc
+  project: cluster-bootstrap
+  source:
+    path: platform-services
+    repoURL: https://github.com/jellebens/ArgosCD
+    targetRevision: HEAD
+# status:
+#   health:
+#     status: Healthy
+#   reconciledAt: "2025-11-23T01:44:50Z"
+#   resources:
+#   - group: argoproj.io
+#     health:
+#       status: Missing
+#     kind: Application
+#     name: cert-manager
+#     namespace: argocd
+#     status: OutOfSync
+#     version: v1alpha1
+#   - group: argoproj.io
+#     health:
+#       status: Missing
+#     kind: Application
+#     name: istio
+#     namespace: argocd
+#     status: OutOfSync
+#     version: v1alpha1
+#   sourceType: Helm
+#   summary: {}
+#   sync:
+#     comparedTo:
+#       destination:
+#         namespace: amarok-system
+#         server: https://kubernetes.default.svc
+#       source:
+#         path: platform-services
+#         repoURL: https://github.com/jellebens/ArgosCD
+#         targetRevision: HEAD
+#     revision: d661f98819edafc714808f5d7af9b5ef5d69b25d
+#     status: OutOfSync
+  

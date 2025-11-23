@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Secret
+type: Opaque
+metadata:
+  annotations:
+    managed-by: argocd.argoproj.io
+  labels:
+    argocd.argoproj.io/secret-type: repository
+  name: istio-repo
+  namespace: argocd
+data:
+  name: aXN0aW8=
+  project: Y2x1c3Rlci1ib290c3RyYXA=
+  type: aGVsbQ==
+  url: aHR0cHM6Ly9pc3Rpby1yZWxlYXNlLnN0b3JhZ2UuZ29vZ2xlYXBpcy5jb20vY2hhcnRz

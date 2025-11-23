@@ -4,7 +4,7 @@ metadata:
   name: istio
   namespace: argocd
 spec:
-  project: platform-services
+  project: cluster-bootstrap
   source:
     repoURL: https://istio-release.storage.googleapis.com/charts
     targetRevision: 1.28.0

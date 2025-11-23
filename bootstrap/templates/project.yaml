@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: cluster-bootstrap
+  namespace: argocd
+spec:
+  description: Amarok Cluster Bootstrap Project
+  # Allow manifests to deploy from any Git repos
+  sourceRepos:
+  - 'istio-repo'
+  - 'jetstack-repo'
+  - 'mygithub-repo'
+  namespaceResourceWhitelist:
+  - group: '*'
+    kind: '*'
+  destinations:
+  - name: in-cluster
+    namespace: '*'
+    server: https://kubernetes.default.svc
