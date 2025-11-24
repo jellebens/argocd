@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: grafana
+  namespace: argocd
+spec:
+  project: cluster-bootstrap
+  source:
+    repoURL: https://grafana.github.io/helm-charts
+    targetRevision: 0.44.2
+    chart: grafana-agent-operator
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: grafana
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true

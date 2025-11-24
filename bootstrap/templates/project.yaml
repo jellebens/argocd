@@ -5,11 +5,10 @@ metadata:
   namespace: argocd
 spec:
   description: Amarok Cluster Bootstrap Project
-  # Allow manifests to deploy from any Git repos
   sourceRepos:
-  - 'istio-repo'
-  - 'jetstack-repo'
-  - 'mygithub-repo'
+  {{- range .Values.repos }}
+  - {{ .name | quote}}
+  {{- end }}
   namespaceResourceWhitelist:
   - group: '*'
     kind: '*'
