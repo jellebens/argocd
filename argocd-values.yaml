@@ -1,0 +1,13 @@
+server:
+  # Run HTTP instead of HTTPS – Istio will do TLS
+  extraArgs:
+    - --insecure
+
+  service:
+    type: ClusterIP
+    port: 80
+
+configs:
+  cm:
+    # External URL users will use to reach Argo CD
+    url: https://argocd.local

@@ -1,0 +1,19 @@
+# argocd-gateway.yaml
+apiVersion: networking.istio.io/v1beta1
+kind: Gateway
+metadata:
+  name: argocd-gateway
+  namespace: argocd
+spec:
+  selector:
+    istio: ingressgateway    # or your custom ingressgateway labels
+  servers:
+    - port:
+        number: 80
+        name: http
+        protocol: HTTP
+      hosts:
+        - argocd.local   # <-- same host as in configs.cm.url
+      tls:
+        mode: SIMPLE
+        credentialName: argocd-tls

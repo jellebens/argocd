@@ -3,14 +3,17 @@ kind: Application
 metadata:
   creationTimestamp: "2025-11-23T01:44:50Z"
   name: platform-services
-  namespace: amarok-system
+  namespace: argocd
 spec:
-  destination:
-    namespace: amarok-system
-    server: https://kubernetes.default.svc
-  project: cluster-bootstrap
   source:
     path: platform-services
     repoURL: https://github.com/jellebens/ArgosCD
     targetRevision: HEAD
+  destination:
+    namespace: amarok-system
+    server: https://kubernetes.default.svc
+  project: cluster-bootstrap
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
   
