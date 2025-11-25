@@ -7,7 +7,7 @@ metadata:
 spec:
   source:
     path: platform-services
-    repoURL: https://github.com/jellebens/ArgosCD
+    repoURL: https://github.com/jellebens/argocd
     targetRevision: HEAD
   destination:
     namespace: amarok-system
