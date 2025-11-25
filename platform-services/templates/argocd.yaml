@@ -5,6 +5,7 @@ metadata:
   namespace: amarok-system
   annotations:
     argocd.argoproj.io/sync-wave: "1"
+    version: 2
 spec:
   project: cluster-bootstrap
   repoURL: https://github.com/jellebens/argocd
